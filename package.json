@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-function-tracker",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Track function start and end",
   "author": "N1cke",
   "license": "MIT",
