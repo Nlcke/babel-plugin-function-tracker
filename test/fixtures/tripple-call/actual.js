@@ -9,4 +9,7 @@ const f = () => {
   useTracking();
   console.log('there');
   useTracking();
+  if (Math.random() < 0.5) {
+    return true;
+  }
 };

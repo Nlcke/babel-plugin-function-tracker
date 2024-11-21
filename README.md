@@ -1,7 +1,7 @@
 # babel-plugin-function-tracker
 
-Babel plugin to track any function start and end. The purpose of the plugin is to provide function
-tracking without external wrapper overhead.
+Provides tracking without external wrapper overhead by calling user function at the end of block
+statement.
 
 ## Installation
 
@@ -14,7 +14,7 @@ npm i -D babel-plugin-function-tracker
 Then add it to your plugins in `babel.config.js` and configure it's options. The plugin works only
 when special function imported from special module and used as a statement in any function
 definition. So with options like `{ functionName: 'functionName', moduleName: 'moduleName' }` it
-will search for `import { functionName } from 'moduleName'`:
+will search for any import statement with `functionName` identifier and `moduleName` source:
 
 ```js
 module.exports = {
@@ -25,6 +25,22 @@ module.exports = {
   ],
 };
 ```
+
+## Options
+
+The plugin accepts two required options (`functionName` and `moduleName`) to search for them in the
+following import statements:
+
+```ts
+import { functionName } from 'moduleName';
+import * as functionName from 'moduleName';
+import functionName from 'moduleName';
+import { default as functionName } from 'moduleName';
+import { something as functionName } from 'moduleName';
+```
+
+Please, note: any other form of import is not available for special function which should be used
+only directly.
 
 ## How it works
 
@@ -38,7 +54,7 @@ import React from 'react';
 import { name1, functionName, name2, name3 } from 'moduleName'; // found
 ```
 
-Then it searches for _the first_ special function call as a statement inside a function definition:
+Then it searches for any special function call as a statement inside a block statement:
 
 ```ts
 function random() {
@@ -77,8 +93,6 @@ function random() {
   }
 }
 ```
-
-Other special function calls inside same function definition will be untouched.
 
 Please take a look at `test/fixtures` directory for more examples.
 

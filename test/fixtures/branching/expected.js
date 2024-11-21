@@ -6,24 +6,24 @@ const getTrue = () => true;
 const getFalse = () => false;
 
 const getFromIf = () => {
-  const _end = useTracking();
+  const _end2 = useTracking();
   try {
     if (Math.random() < 0.5) {
-      return _end(getTrue());
+      return _end2(getTrue());
     } else {
-      return _end(getFalse());
+      return _end2(getFalse());
     }
-    _end();
-  } catch (_e) {
-    throw _end(_e);
+    _end2();
+  } catch (_e2) {
+    throw _end2(_e2);
   }
 };
 
 const getFromTernaryOperator = () => {
-  const _end2 = useTracking();
+  const _end = useTracking();
   try {
-    return _end2(Math.random() < 0.5 ? getTrue() : getFalse());
-  } catch (_e2) {
-    throw _end2(_e2);
+    return _end(Math.random() < 0.5 ? getTrue() : getFalse());
+  } catch (_e) {
+    throw _end(_e);
   }
 };
