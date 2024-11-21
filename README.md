@@ -82,7 +82,7 @@ Other special function calls inside same function definition will be untouched.
 
 Please take a look at `test/fixtures` directory for more examples.
 
-# Special function
+## Special function
 
 The special function may accept any arguments, but it should always return "end"-function of the
 following type:
