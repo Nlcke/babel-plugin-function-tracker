@@ -1,0 +1,47 @@
+{
+  "name": "babel-plugin-function-tracker",
+  "version": "1.0.0",
+  "description": "Track function start and end",
+  "author": "N1cke",
+  "license": "MIT",
+  "repository": "https://github.com/nlcke/babel-plugin-function-tracker",
+  "bugs": {
+    "url": "https://github.com/nlcke/babel-plugin-function-tracker/issues"
+  },
+  "homepage": "https://github.com/nlcke/babel-plugin-function-tracker#readme",
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "function",
+    "tracker"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "babel src --out-dir dist && tsc --project publish.tsconfig.json",
+    "prepublish": "npm run build"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.25.9",
+    "@babel/core": "^7.26.0",
+    "@babel/node": "^7.26.0",
+    "@babel/plugin-syntax-jsx": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@babel/types": "^7.26.0",
+    "@jest/globals": "^29.7.0",
+    "@prettier/sync": "^0.5.2",
+    "@types/babel__core": "^7.20.5",
+    "@types/jest": "^29.5.14",
+    "eslint": "^8.40.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "jest": "^29.7.0",
+    "prettier": "^2.8.8",
+    "typescript": "^5.6.3"
+  }
+}

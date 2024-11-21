@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "ES2015",
+    "lib": ["ES2015"],
+    "moduleResolution": "node",
+    "checkJs": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "exactOptionalPropertyTypes": true
+  },
+  "exclude": ["dist"]
+}
